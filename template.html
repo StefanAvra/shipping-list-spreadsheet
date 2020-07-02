@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="container no-print">
+                <button onclick="printPage()" class="button no-print is-black is-large is-outlined">Drucken</button>
+                <br>
+                <br>
+            </div>
+
+
+            <h1 class="title">
+                Reklamation / Return:
+            </h1>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Kunde</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Name" value="<?= customer ?>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Order ID</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input class="input" type="text" value="<?= orderID ?>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Ticket ID</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input class="input" type="text" value="<?= ticketID ?>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Modell / Farbe</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input class="input" type="text" value="<?= model ?>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Grund</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input class="input" type="text" value="<?= reason ?>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">bearbeitet von</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Mitarbeiter-Kürzel / ID" value="<?= user ?>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Sonstiges</label>
+                <div class="control">
+                    <textarea class="textarea"></textarea>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column">
+                    <?= store ?>
+                </div>
+                <div id="date" class="column has-text-right">
+                    <?= date ?>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script>
+    function printPage() {
+        window.print();
+    }
+
+</script>
+
+<style>
+    @media print {
+
+        .no-print,
+        .no-print * {
+            display: none !important;
+        }
+    }
+</style>
+
+</html>
